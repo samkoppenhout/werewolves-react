@@ -48,21 +48,31 @@ function Home() {
                 <h1>Enter room code:</h1>
                 {error && <p style={{ color: "red" }}>{error}</p>}
                 <form className="form" onSubmit={submitActions}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            value={roomCode}
-                            onChange={(e) => setRoomCode(e.target.value)}
-                            className="form-control"
-                            id="inputLocation"
-                            aria-describedby="promptSpace"
-                            placeholder="Enter a room code..."
-                            required
-                        />
+                    <div className="form-group text-center">
+                        <div className="row justify-content-center">
+                            <div className="col-8">
+                                <input
+                                    type="text"
+                                    value={roomCode}
+                                    onChange={(e) =>
+                                        setRoomCode(e.target.value)
+                                    }
+                                    className="form-control"
+                                    id="inputLocation"
+                                    aria-describedby="promptSpace"
+                                    placeholder="Enter a room code..."
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="row justify-content-center mt-2">
+                            <div className="col-auto">
+                                <button type="submit" className="btn btn-light">
+                                    Go
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" className="btn btn-light mx-2">
-                        Go
-                    </button>
                 </form>
             </div>
             {!loggedIn ? (
